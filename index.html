@@ -1,18 +1,95 @@
+<!-- 
+práctica jquery mobile
+
+interfaz gráfica en la cual los profesores puedan introducir las notas de exposicion de proyectos de alumnos de formación profesional
+
+La página contará con los siguientes apartados
+- página inicial de la aplicación
+- acceso mediante login y password para el profesorado
+- menú del profesor con datos, tutorial de la aplicación, selección de curso y alumno para introducir las notas del alumno
+- formulario para la inserción de la nota según los apartados, además calculará la nota sumando los diferentes campos.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Exposición de proyectos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Exposicion de proyectos</title>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="functions.js"></script>
+	<link rel="stylesheet" href="estilo.css"/>
 </head>
 <body>
-	<header>
-		
-	</header>
-	<section>
-	
-	</section>
+	<!-- menu -->
+	<div data-role="navbar">
+		<a data-role="button" href="#login" data-rel="dialog" data-transition="pop">
+	</div>
+	<!-- fin menu -->
+	<!-- pagina inicio -->
+	<div data-role="page" id="inicio">
+		<div data-role="header">
+			<h1>Exposición de proyectos</h1>
+		</div>
+		<div data-role="content">
+			<a data-role="button" href="#login">Acceso profesorado</a>
+		</div>
+		<div data-role="footer">
+			<h4>Pie de pagina</h4>
+		</div>
+	</div>
+	<!-- fin pagina inicio -->
+	<!-- pagina login -->
+	<div data-role="page" id="login">
+		<div data-role="header">
+			<h1>Acceso a la aplicación</h1>
+		</div>
+		<div data-role="content">
+			<form onsubmit="#menuProfesor" method="post">
+				<div data-role="fieldcontain">	
+					<label for="nombre">Nombre: </label>
+					<input type="text" name="nombre" id="nombre" value=""/>
+				</div>
+				<div data-role="fieldcontain">	
+					<label for="password">Password: </label>
+					<input type="password" name="password" id="password" value=""/>
+				</div>
+				<div data-role="fieldcontain">	
+					<input type="submit" data-icon="check" name="envAcceso" id="envAcceso" value="Acceder"/>
+				</div>
+			</form>
+		</div>
+		<div data-role="footer">
+			<a data-role="button" data-icon="home" href="#inicio">Volver al inicio</a>
+		</div>
+	</div>
+	<!-- fin pagina login -->
+	<!-- pagina menu profesorado-->
+	<div data-role="page" id="menuProfesor">
+		<div data-role="header">
+			<h1>Menú profesor</h1>
+		</div>
+		<div data-role="content">
+			<h3>Selecciona el curso y el alumno para su evaluación</h3>
+			<div data-role="content">
+				<div data-role="fieldcontain">
+					<label for="curso">Curso: </label>
+					<select name="selCurso" id="selCurso"></select>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="alumno">Alumno: </label>
+					<select name="selAlumno" id="selAlumno"></select>
+				</div>
+				<div data-role="fieldcontain">	
+					<input type="submit" data-icon="check" name="seleccionCA" id="seleccionCA" value="Seleccionar"/>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer">
+			<a data-role="button" data-icon="power" href="#inicio">Cerrar sesión</a>
+		</div>
+	</div>
+	<!-- fin pagina menu profesorado -->
 </body>
 </html>
