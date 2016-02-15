@@ -1,10 +1,17 @@
 body{
 	margin:0;
 	width:1200px;
-	font-size:1em;
+	font-size:1em !important;
+}
+a:hover{
+	color:green !important;
+	text-shadow:0 1px 0 green !important;
+}
+a:link{
+	text-shadow:0 1px 0 green !important;
 }
 .titulo{
-	font-size: 2em;
+	font-size: 1.5em !important;
 }
 .menu{
 	width:700px;
@@ -38,4 +45,89 @@ body{
 	.menuf li a{
 		width:160px;
 	}
+}
+.ui-btn, .ui-btn select, .ui-input-btn input{
+	text-shadow:0 1px 0 green !important;
+}
+.ui-btn:focus, .ui-btn select, .ui-input-btn input{
+	box-shadow:0 0 12px #009900 !important;
+}
+.ui-page-theme-a .ui-btn.ui-btn-active,
+html .ui-bar-a .ui-btn.ui-btn-active,
+html .ui-body-a .ui-btn.ui-btn-active,
+html body .ui-group-theme-a .ui-btn.ui-btn-active,
+html head+body .ui-btn.ui-btn-a.ui-btn-active,
+.ui-page-theme-a .ui-checkbox-on:after,
+html .ui-bar-a .ui-checkbox-on:after,
+html .ui-body-a .ui-checkbox-on:after,
+html body .ui-group-theme-a .ui-checkbox-on:after,
+.ui-btn.ui-checkbox-on.ui-btn-a:after,
+.ui-page-theme-a .ui-flipswitch-active,
+html .ui-bar-a .ui-flipswitch-active,
+html .ui-body-a .ui-flipswitch-active,
+html body .ui-group-theme-a .ui-flipswitch-active,
+html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active,
+.ui-page-theme-a .ui-slider-track .ui-btn-active,
+html .ui-bar-a .ui-slider-track .ui-btn-active,
+html .ui-body-a .ui-slider-track .ui-btn-active,
+html body .ui-group-theme-a .ui-slider-track .ui-btn-active,
+html body div.ui-slider-track.ui-body-a .ui-btn-active {
+    background-color: #3BCC33 !important;
+    border-color: #3BCC33 !important;
+    text-shadow: 0 1px 0 #129900 !important;
+}
+
+.ui-page-theme-a .ui-radio-on:after,
+html .ui-bar-a .ui-radio-on:after,
+html .ui-body-a .ui-radio-on:after,
+html body .ui-group-theme-a .ui-radio-on:after,
+.ui-btn.ui-radio-on.ui-btn-a:after {
+    border-color: #3BCC33 !important;
+}
+
+.ui-page-theme-a .ui-btn:focus,
+html .ui-bar-a .ui-btn:focus,
+html .ui-body-a .ui-btn:focus,
+html body .ui-group-theme-a .ui-btn:focus,
+html head+body .ui-btn.ui-btn-a:focus,
+.ui-page-theme-a .ui-focus,
+html .ui-bar-a .ui-focus,
+html .ui-body-a .ui-focus,
+html body .ui-group-theme-a .ui-focus,
+html head+body .ui-btn-a.ui-focus,
+html head+body .ui-body-a.ui-focus {
+    -webkit-box-shadow: 0 0 12px #3BCC33 !important;
+    -moz-box-shadow: 0 0 12px #3BCC33 !important;
+    box-shadow: 0 0 12px #3BCC33 !important;
+}
+
+.ui-page-theme-b a,
+html .ui-bar-b a,
+html .ui-body-b a,
+html body .ui-group-theme-b a {
+    color: #2CDD22 !important;
+}
+
+.ui-page-theme-b a:visited,
+html .ui-bar-b a:visited,
+html .ui-body-b a:visited,
+html body .ui-group-theme-b a:visited {
+    color: #2CDD22 !important;
+}
+
+.ui-page-theme-b a:hover,
+html .ui-bar-b a:hover,
+html .ui-body-b a:hover,
+html body .ui-group-theme-b a:hover {
+    color: #07BB00 !important;
+}
+
+.ui-page-theme-b a:active,
+html .ui-bar-b a:active,
+html .ui-body-b a:active,
+html body .ui-group-theme-b a:active {
+    color: #07BB00 !important;
+}
+div > select > option checked{
+	background-color:green;
 }
