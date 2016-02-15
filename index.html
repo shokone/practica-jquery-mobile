@@ -1,19 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
 <!-- 
 práctica jquery mobile
 
 interfaz gráfica en la cual los profesores puedan introducir las notas de exposicion de proyectos de alumnos de formación profesional
 
-La página contará con los siguientes apartados
-- página inicial de la aplicación
-- acceso mediante login y password para el profesorado
-- menú del profesor con datos, tutorial de la aplicación, selección de curso y alumno para introducir las notas del alumno
-- formulario para la inserción de la nota según los apartados, además calculará la nota sumando los diferentes campos.
+Los requerimientos son los siguientes:
+
+    - Acceso mediante login y password para el profesorado
+    - Selección de curso y alumno
+    - Lista de items a valorar durante la expresión oral que ayudará a la evaluación final del alumno.
+    - Formulario para inserción y envío de nota.
+    - Se valorará especialmente la usabilidad de la aplicación: debe mostrar de una u otra forma el texto explicativo para el uso de la aplicación sin "llenar la pantalla".
 -->
-<!DOCTYPE html>
-<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title>Exposicion de proyectos</title>
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -22,11 +24,6 @@ La página contará con los siguientes apartados
 	<link rel="stylesheet" href="estilo.css"/>
 </head>
 <body>
-	<!-- menu -->
-	<div data-role="navbar">
-		<a data-role="button" href="#login" data-rel="dialog" data-transition="pop">
-	</div>
-	<!-- fin menu -->
 	<!-- pagina inicio -->
 	<div data-role="page" id="inicio">
 		<div data-role="header">
@@ -35,7 +32,7 @@ La página contará con los siguientes apartados
 		<div data-role="content">
 			<a data-role="button" href="#login">Acceso profesorado</a>
 		</div>
-		<div data-role="footer">
+		<div data-role="footer" class="footer">
 			<h4>Pie de pagina</h4>
 		</div>
 	</div>
@@ -46,22 +43,24 @@ La página contará con los siguientes apartados
 			<h1>Acceso a la aplicación</h1>
 		</div>
 		<div data-role="content">
-			<form onsubmit="#menuProfesor" method="post">
+			<form action="javascript:void(null);" method="post" onsubmit="compAcceso();">
 				<div data-role="fieldcontain">	
 					<label for="nombre">Nombre: </label>
 					<input type="text" name="nombre" id="nombre" value=""/>
 				</div>
 				<div data-role="fieldcontain">	
 					<label for="password">Password: </label>
-					<input type="password" name="password" id="password" value=""/>
+					<input type="text" name="password" id="password" value=""/>
 				</div>
 				<div data-role="fieldcontain">	
 					<input type="submit" data-icon="check" name="envAcceso" id="envAcceso" value="Acceder"/>
 				</div>
 			</form>
 		</div>
-		<div data-role="footer">
-			<a data-role="button" data-icon="home" href="#inicio">Volver al inicio</a>
+		<div data-role="footer" class="footer">
+			<ul class="menuf">
+				<li><a data-role="button" data-icon="home" href="#inicio">Volver al inicio</a></li>
+			</ul>
 		</div>
 	</div>
 	<!-- fin pagina login -->
@@ -73,23 +72,128 @@ La página contará con los siguientes apartados
 		<div data-role="content">
 			<h3>Selecciona el curso y el alumno para su evaluación</h3>
 			<div data-role="content">
-				<div data-role="fieldcontain">
-					<label for="curso">Curso: </label>
-					<select name="selCurso" id="selCurso"></select>
-				</div>
-				<div data-role="fieldcontain">
-					<label for="alumno">Alumno: </label>
-					<select name="selAlumno" id="selAlumno"></select>
-				</div>
-				<div data-role="fieldcontain">	
-					<input type="submit" data-icon="check" name="seleccionCA" id="seleccionCA" value="Seleccionar"/>
-				</div>
+				<form action="#" method="post" data-transition="slide">
+					<div data-role="fieldcontain">
+						<label for="selCurso">Curso: </label>
+						<select name="selCurso" id="selCurso"></select>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="selAlumno">Alumno: </label>
+						<select name="selAlumno" id="selAlumno"></select>
+					</div>
+					<div data-role="fieldcontain">	
+						<!--<input type="submit" data-icon="check" name="seleccionCA" id="seleccionCA" value="Seleccionar"/>-->
+						<a data-role="button" data-icon="check" href="#alumno">Seleccionar</a>
+					</div>
+				</form>
 			</div>
 		</div>
-		<div data-role="footer">
-			<a data-role="button" data-icon="power" href="#inicio">Cerrar sesión</a>
+		<div data-role="footer" class="footer">
+			<ul class="menuf">
+				<li><a data-role="button" data-icon="power" href="#login">Cerrar sesión</a></li>
+				<li><a data-role="button" data-icon="home" href="#inicio">Volver al inicio</a></li>
+			</ul>
 		</div>
 	</div>
 	<!-- fin pagina menu profesorado -->
+	<!-- inicio pagina alumno -->
+	<div data-role="page" id="alumno">
+		<div data-role="header">
+			<h1>Evaluación del alumno</h1>
+		</div>
+		<div data-role="content">
+			<ul class="menu">
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#notas">Calificación</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#calificacion">Global</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="info" href="">Ayuda</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" class="footer">
+			<ul class="menuf">
+				<li><a data-role="button" data-icon="back" href="#menuProfesor">Volver a selección de alumno</a></li>
+				<li><a data-role="button" data-icon="power" href="#login">Cerrar sesión</a></li>
+				<li><a data-role="button" data-icon="home" href="#inicio">Volver al inicio</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- fin pagina alumno -->
+
+	<!-- inicio pagina notas -->
+	<div data-role="page" id="notas">
+		<div data-role="header">
+			<h1>Expresión oral</h1>
+		</div>
+		<div data-role="content">
+			<ul class="menu">
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#notas">Calificación</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#calificacion">Global</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="info" href="">Ayuda</a></li>
+			</ul>
+			<form action="#" method="get">
+				<div data-role="fieldcontain">
+					<label for="nota1">nota1</label>
+					<input type="number" name="nota1" id="nota1"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="nota2">nota2</label>
+					<input type="number" name="nota2" id="nota2"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="nota3">nota3</label>
+					<input type="number" name="nota3" id="nota3"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="nota4">nota4</label>
+					<input type="number" name="nota4" id="nota4"/>
+				</div>
+			</form>
+		</div>
+		<div data-role="footer" class="footer">
+			<ul class="menuf">
+				<li><a data-role="button" data-icon="back" href="#menuProfesor">Volver a selección de alumno</a></li>
+				<li><a data-role="button" data-icon="power" href="#login">Cerrar sesión</a></li>
+				<li><a data-role="button" data-icon="home" href="#inicio">Volver al inicio</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- fin pagina notas -->
+	<!-- inicio pagina calificacion -->
+	<div data-role="page" id="calificacion">
+		<div data-role="header">
+			<h1>Calificación global</h1>
+		</div>
+		<div data-role="content">
+			<ul class="menu">
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#notas">Calificación</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#calificacion">Global</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="info" href="">Ayuda</a></li>
+			</ul>
+			<form>
+				<div data-role="fieldcontain">
+					<label for="cal1">Contenido del proyecto (Max. 6.5 puntos, 65%): </label>
+					<input type="number" name="cal1" id="cal1" max="6.5" step="0.1" min="0"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="cal2">Calidad de presentación (Max. 1 punto, 10%): </label>
+					<input type="number" name="cal2" id="cal2" min="0" max="1" step="0.1"/>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="cal3">Expresión oral (Max. 2.5 puntos, 25%): </label>
+					<input type="number" name="cal3" id="cal3" min="0" max="2.5" step="0.1"/>
+				</div>
+			</form>
+		</div>
+		<div data-role="footer" class="footer">
+			<ul class="menuf">
+				<li><a data-role="button" data-icon="back" href="#menuProfesor">Volver a alumnos</a></li>
+				<li><a data-role="button" data-icon="power" href="#login">Cerrar sesión</a></li>
+				<li><a data-role="button" data-icon="home" href="#inicio">Volver al inicio</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- fin pagina calificacion -->
+	<script>
+		camposCursoAlumno();
+	</script>
 </body>
 </html>

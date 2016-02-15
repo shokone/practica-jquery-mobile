@@ -1,0 +1,9 @@
+práctica jquery mobile
+
+interfaz gráfica en la cual los profesores puedan introducir las notas de exposiciones de proyectos de alumnos de formación profesional
+
+- página inicial de la aplicación
+- acceso mediante login y password para el profesorado
+- menú del profesor con datos, tutorial de la aplicación, selección de curso y alumno para introducir las notas del alumno
+- formulario para la inserción de la nota según los apartados, además calculará la nota sumando los diferentes campos.
+
