@@ -1,0 +1,32 @@
+[	
+	"result":[
+		{
+			"curso": "DAW",
+			"alumnos": {
+				"Iván Martínez": {
+					"notas": {}
+					},
+				"Marcos López": {
+					"notas": {}
+					},
+				"Arkaitz Huerta": {
+					"notas": {}
+				}
+			}
+		},
+		{
+			"curso": "DAM",
+			"alumnos": {
+				"Eneko Irarragorri": {
+					"notas": {}
+					},
+				"Sergio Blasco": {
+					"notas": {}
+					},
+				"Manuel Gil": {
+					"notas": {}
+				}
+			}
+		}
+	]
+]

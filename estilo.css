@@ -1,6 +1,10 @@
 body{
 	margin:0;
 	width:1200px;
+	font-size:1em;
+}
+.titulo{
+	font-size: 2em;
 }
 .menu{
 	width:700px;
