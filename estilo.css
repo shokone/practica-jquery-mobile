@@ -14,7 +14,7 @@ a:link{
 	font-size: 1.5em !important;
 }
 .menu{
-	width:700px;
+	width:1000px;
 	margin: 0 auto;
 }
 .menu li{
@@ -44,6 +44,10 @@ a:link{
 	}
 	.menuf li a{
 		width:160px;
+	}
+	.titulo{
+		font-size:1.2em;
+		heigth:auto;
 	}
 }
 .ui-btn, .ui-btn select, .ui-input-btn input{

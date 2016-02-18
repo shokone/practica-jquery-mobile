@@ -73,7 +73,7 @@ Los requerimientos son los siguientes:
 		<div data-role="content">
 			<h3>Selecciona el curso y el alumno para su evaluación</h3>
 			<div data-role="content">
-				<form action="#" method="post" data-transition="slide">
+				<form action="javascript:void(null);" method="post" data-transition="slide" onsubmit="getNotas(this.selAlumno.value);">
 					<div data-role="fieldcontain">
 						<label for="selCurso">Curso: </label>
 						<select name="selCurso" id="selCurso"></select>
@@ -83,8 +83,8 @@ Los requerimientos son los siguientes:
 						<select name="selAlumno" id="selAlumno"></select>
 					</div>
 					<div data-role="fieldcontain">	
-						<!--<input type="submit" data-icon="check" name="seleccionCA" id="seleccionCA" value="Seleccionar"/>-->
-						<a data-role="button" data-icon="check" href="#alumno">Seleccionar</a>
+						<input type="submit" data-icon="check" name="seleccionCA" id="seleccionCA" value="Seleccionar"/>
+						<!--<a data-role="button" data-icon="check" href="#alumno">Seleccionar</a>-->
 					</div>
 				</form>
 			</div>
@@ -104,7 +104,8 @@ Los requerimientos son los siguientes:
 		</div>
 		<div data-role="content">
 			<ul class="menu">
-				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#notas">Calificación</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#alumno">Alumno</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#notas">Exposición</a></li>
 				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#calificacion">Global</a></li>
 				<li><a data-role="button" class="ui-btn-icon-left" data-icon="info" href="">Ayuda</a></li>
 			</ul>
@@ -126,7 +127,8 @@ Los requerimientos son los siguientes:
 		</div>
 		<div data-role="content">
 			<ul class="menu">
-				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#notas">Calificación</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#alumno">Alumno</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#notas">Exposición</a></li>
 				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#calificacion">Global</a></li>
 				<li><a data-role="button" class="ui-btn-icon-left" data-icon="info" href="">Ayuda</a></li>
 			</ul>
@@ -134,203 +136,108 @@ Los requerimientos son los siguientes:
 			<form action="javascript:void(null);" method="get" onsubmit="notasPresentacion();">
 				<div data-role="fieldcontain">
 					<label for="nota1">Indumentaria: </label>
-					<select name="nota1" id="nota1">
-						<option name="nota1">Bien</option>
-						<option name="nota1">Regular</option>
-						<option name="nota1">Mal</option>
-					</select>
+					<select name="nota1" id="nota0"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<h4>Introducción: </h4>
 					<label for="nota2">Introducción atractiva: </label>
-					<select name="nota2" id="nota2">
-						<option name="nota2">Bien</option>
-						<option name="nota2">Regular</option>
-						<option name="nota2">Mal</option>
-					</select>
+					<select name="nota2" id="nota1"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota3">Introducción clara: </label>
-					<select name="nota3" id="nota3">
-						<option name="nota3">Bien</option>
-						<option name="nota3">Regular</option>
-						<option name="nota3">Mal</option>
-					</select>
+					<select name="nota3" id="nota2"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<h4>Desarrollo: </h4>
 					<label for="nota4">Orden en las ideas: </label>
-					<select name="nota4" id="nota4">
-						<option name="nota4">Bien</option>
-						<option name="nota4">Regular</option>
-						<option name="nota4">Mal</option>
-					</select>
+					<select name="nota4" id="nota3"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota5">Claridad en la exposición: </label>
-					<select name="nota5" id="nota5">
-						<option name="nota5">Bien</option>
-						<option name="nota5">Regular</option>
-						<option name="nota5">Mal</option>
+					<select name="nota5" id="nota4">
 					</select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota6">Aclaración de términos técnicos: </label>
-					<select name="nota6" id="nota6">
-						<option name="nota6">Bien</option>
-						<option name="nota6">Regular</option>
-						<option name="nota6">Mal</option>
-					</select>
+					<select name="nota6" id="nota5"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<h4>Conclusión: </h4>
 					<label for="nota7">Objetivo del proyecto claro: </label>
-					<select name="nota7" id="nota7">
-						<option name="nota7">Bien</option>
-						<option name="nota7">Regular</option>
-						<option name="nota7">Mal</option>
-					</select>
+					<select name="nota7" id="nota6"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota8">Se vende bien: </label>
-					<select name="nota8" id="nota8">
-						<option name="nota8">Bien</option>
-						<option name="nota8">Regular</option>
-						<option name="nota8">Mal</option>
-					</select>
+					<select name="nota8" id="nota7"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota9">Seguridad en lo que expone: </label>
-					<select name="nota9" id="nota9">
-						<option name="nota9">Bien</option>
-						<option name="nota9">Regular</option>
-						<option name="nota9">Mal</option>
-					</select>
+					<select name="nota9" id="nota8"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota10">La presentación está trabajada: </label>
-					<select name="nota10" id="nota10">
-						<option name="nota10">Bien</option>
-						<option name="nota10">Regular</option>
-						<option name="nota10">Mal</option>
-					</select>
+					<select name="nota10" id="nota9"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota11">Entusiasmo al exponer: </label>
-					<select name="nota11" id="nota11">
-						<option name="nota11">Bien</option>
-						<option name="nota11">Regular</option>
-						<option name="nota11">Mal</option>
-					</select>
+					<select name="nota11" id="nota10"></select>
 				</div>
 				<h3>Expresión oral: </h3>
 				<div data-role="fieldcontain">
 					<label for="nota12">Entonación: </label>
-					<select name="nota12" id="nota12">
-						<option name="nota12">Bien</option>
-						<option name="nota12">Regular</option>
-						<option name="nota12">Mal</option>
-					</select>
+					<select name="nota12" id="nota11"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota13">Volumen: </label>
-					<select name="nota13" id="nota13">
-						<option name="nota13">Bien</option>
-						<option name="nota13">Regular</option>
-						<option name="nota13">Mal</option>
-					</select>
+					<select name="nota13" id="nota12"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota14">Velocidad: </label>
-					<select name="nota14" id="nota14">
-						<option name="nota14">Bien</option>
-						<option name="nota14">Regular</option>
-						<option name="nota14">Mal</option>
-					</select>
+					<select name="nota14" id="nota13"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota15">Vacilación en la voz: </label>
-					<select name="nota15" id="nota15">
-						<option name="nota15">Bien</option>
-						<option name="nota15">Regular</option>
-						<option name="nota15">Mal</option>
-					</select>
+					<select name="nota15" id="nota14"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota16">Pausas: </label>
-					<select name="nota16" id="nota16">
-						<option name="nota16">Bien</option>
-						<option name="nota16">Regular</option>
-						<option name="nota16">Mal</option>
-					</select>
+					<select name="nota16" id="nota15"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota17">Utilización de muletillas: </label>
-					<select name="nota17" id="nota17">
-						<option name="nota17">Bien</option>
-						<option name="nota17">Regular</option>
-						<option name="nota17">Mal</option>
-					</select>
+					<select name="nota17" id="nota16"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<h4>Duración:</h4>
 					<label for="nota18">Se ajusta al tiempo estipulado: </label>
-					<select name="nota18" id="nota18">
-						<option name="nota18">Bien</option>
-						<option name="nota18">Regular</option>
-						<option name="nota18">Mal</option>
-					</select>
+					<select name="nota18" id="nota17"></select>
 				</div>
 				<div data-role="fieldcontain">
 				<h4>Lenguaje no verbal:</h4>
 					<label for="nota19">Dirige la mirada a todo el público: </label>
-					<select name="nota19" id="nota19">
-						<option name="nota19">Bien</option>
-						<option name="nota19">Regular</option>
-						<option name="nota19">Mal</option>
-					</select>
+					<select name="nota19" id="nota18"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota20">Sonrisa/expresión facial positiva: </label>
-					<select name="nota20" id="nota20">
-						<option name="nota20">Bien</option>
-						<option name="nota20">Regular</option>
-						<option name="nota20">Mal</option>
-					</select>
+					<select name="nota20" id="nota19"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota21">Posición correcta del cuerpo: </label>
-					<select name="nota21" id="nota21">
-						<option name="nota21">Bien</option>
-						<option name="nota21">Regular</option>
-						<option name="nota21">Mal</option>
-					</select>
+					<select name="nota21" id="nota20"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<label for="nota22">Tics, gestos nerviosos: </label>
-					<select name="nota22" id="nota22">
-						<option name="nota22">Bien</option>
-						<option name="nota22">Regular</option>
-						<option name="nota22">Mal</option>
-					</select>
+					<select name="nota22" id="nota21"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<h4>Atención del público:</h4>
 					<label for="nota23">Logra atraer la atención: </label>
-					<select name="nota23" id="nota23">
-						<option name="nota23">Bien</option>
-						<option name="nota23">Regular</option>
-						<option name="nota23">Mal</option>
-					</select>
+					<select name="nota23" id="nota22"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<h4>Preguntas realizadas:</h4>
 					<label for="nota24">Responde de forma coherente: </label>
-					<select name="nota24" id="nota24">
-						<option name="nota24">Bien</option>
-						<option name="nota24">Regular</option>
-						<option name="nota24">Mal</option>
-					</select>
+					<select name="nota24" id="nota23"></select>
 				</div>
 				<div data-role="fieldcontain">
 					<input type="submit" data-role="button" data-icon="check" value="Enviar notas"/>
@@ -339,6 +246,7 @@ Los requerimientos son los siguientes:
 		</div>
 		<div data-role="footer" class="footer">
 			<ul class="menuf">
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#alumno">Alumno</a></li>
 				<li><a data-role="button" data-icon="back" href="#menuProfesor">Volver a selección de alumno</a></li>
 				<li><a data-role="button" data-icon="power" href="#login">Cerrar sesión</a></li>
 				<li><a data-role="button" data-icon="home" href="#inicio">Volver al inicio</a></li>
@@ -353,7 +261,7 @@ Los requerimientos son los siguientes:
 		</div>
 		<div data-role="content">
 			<ul class="menu">
-				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#notas">Calificación</a></li>
+				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#notas">Exposición</a></li>
 				<li><a data-role="button" class="ui-btn-icon-left" data-icon="eye" href="#calificacion">Global</a></li>
 				<li><a data-role="button" class="ui-btn-icon-left" data-icon="info" href="">Ayuda</a></li>
 			</ul>
@@ -416,8 +324,9 @@ Los requerimientos son los siguientes:
 	</div>
 	<!-- fin pagina final -->
 	<script>
-		//leeJson();
-		camposCursoAlumno();
+		leeJson();
+		//getNotas();
+		//camposCursoAlumno();
 	</script>
 </body>
 </html>

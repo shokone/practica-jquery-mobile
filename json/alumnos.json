@@ -1,32 +1,39 @@
-[	
-	"result":[
-		{
-			"curso": "DAW",
-			"alumnos": {
-				"Iván Martínez": {
-					"notas": {}
-					},
-				"Marcos López": {
-					"notas": {}
-					},
-				"Arkaitz Huerta": {
-					"notas": {}
-				}
-			}
-		},
-		{
-			"curso": "DAM",
-			"alumnos": {
-				"Eneko Irarragorri": {
-					"notas": {}
-					},
-				"Sergio Blasco": {
-					"notas": {}
-					},
-				"Manuel Gil": {
-					"notas": {}
-				}
-			}
-		}
-	]
-]
+{
+    "result": [{
+        "curso": "DAW",
+        "alumnos": [{
+            "nombre": "Iván Martínez",
+            "notasTotales": [5,0,0,0],
+            "notasPresentacion": [1,0.5,0,0,0,0,0,0,1,0,1],
+            "notasExpresion": [0,0,0,0,0,0,0,0,0,0,1,0,1]
+        }, {
+            "nombre": "Marcos López",
+            "notasTotales": [0,0,0,0],
+            "notasPresentacion": [1,0.5,0,0,0,0,0,0,0,0,0],
+            "notasExpresion": [0,0,0,0,0,0,0,0,0,0,0,0,0]
+        }, {
+            "nombre": "Arkaitz Huerta",
+            "notasTotales": [0,0,0,0],
+            "notasPresentacion": [1,0.5,0,0,0,0,0,0,0,0,0],
+            "notasExpresion": [0,0,0,0,0,0,0,0,0,0,0,0,0]
+        }]
+    }, {
+        "curso": "DAM",
+        "alumnos": [{
+            "nombre": "Eneko Irarragorri",
+            "notasTotales": [0,0,0,0],
+            "notasPresentacion": [1,0.5,0,0,0,0,0,0,0,0,0],
+            "notasExpresion": [0,0,0,0,0,0,0,0,0,0,0,0,0]
+        }, {
+            "nombre": "Sergio Blasco",
+            "notasTotales": [0,0,0,0],
+            "notasPresentacion": [1,0.5,0,0,0,0,0,0,0,0,0],
+            "notasExpresion": [0,0,0,0,0,0,0,0,0,0,0,0,0]
+        }, {
+            "nombre": "Manuel Gil",
+            "notasTotales": [0,0,0,0],
+            "notasPresentacion": [1,0.5,0,0,0,0,0,0,0,0,0],
+            "notasExpresion": [0,0,0,0,0,0,0,0,0,0,0,0,0]
+        }]
+    }]
+}
